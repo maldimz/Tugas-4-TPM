@@ -60,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                         password == usersList[i].password) {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) => HomePage()));
+                      return;
                     } else {
                       setState(() {
                         error = 'Username or Password is wrong';
