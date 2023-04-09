@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4tpm/pages/logout.dart';
 import 'package:tugas4tpm/pages/menu_page.dart';
+import 'package:task4/pages/tutorial.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super (key:key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     MenuPage(),
-    Text('Tutorial'),
+    TutorialPage(),
     LogoutPage()
   ];
 
