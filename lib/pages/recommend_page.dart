@@ -42,7 +42,7 @@ class _RecommendPageState extends State<RecommendPage> {
           final game = gameList[index];
           return ListTile(
             onTap: () async {
-              launch(game.linkStore);
+              launchUrl(Uri.parse(game.linkStore));
             },
             leading: Image.network(
               game.imageUrls[0],
