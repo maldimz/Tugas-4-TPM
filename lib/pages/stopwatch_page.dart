@@ -131,7 +131,6 @@ class _StopwatchPageState extends State<StopwatchPage> {
                         color: Colors.white,
                       )),
                   color: Colors.red,
-
                   onPressed: () {
                     stopTimer();
                   }),
@@ -168,7 +167,7 @@ class _StopwatchPageState extends State<StopwatchPage> {
         ),
         Text(
           header,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(),
         ),
       ]);
 }
