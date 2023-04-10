@@ -26,6 +26,7 @@ class MenuPage extends StatelessWidget {
                       ));
                 },
                 child: Text('List Group')),
+            SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -35,6 +36,7 @@ class MenuPage extends StatelessWidget {
                       ));
                 },
                 child: Text('Stopwatch Application')),
+            SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -44,6 +46,7 @@ class MenuPage extends StatelessWidget {
                       ));
                 },
                 child: Text('Recommendation Sites')),
+            SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(

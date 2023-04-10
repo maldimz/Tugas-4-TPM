@@ -10,8 +10,7 @@ class StopwatchPage extends StatefulWidget {
 }
 
 class _StopwatchPageState extends State<StopwatchPage> {
-  final StopWatchTimer _swTimer = StopWatchTimer();
-  final _hours = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -85,22 +84,9 @@ class _StopwatchPageState extends State<StopwatchPage> {
           )
       ),
 
-    );
-  }
 
-  ElevatedButton ResetButton(){
-    return ElevatedButton(
-      onPressed: () {
-        _swTimer.onExecute.add(StopWatchExecute.reset);
-      },
-      child: Text('Reset'),
-      style: ElevatedButton.styleFrom(
-          primary: Colors.red,
-          textStyle: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.bold
           )
       ),
 
-    );
-  }
+
 }

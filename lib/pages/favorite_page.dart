@@ -1,21 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:tugas4tpm/data/fav.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class FavoritePage extends StatelessWidget {
+class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
 
   @override
+  State<FavoritePage> createState() => _FavoritePageState();
+}
+
+class _FavoritePageState extends State<FavoritePage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+        child: Scaffold(
       appBar: AppBar(
-        title: Text('Favorite'),
+        title: Text("Favorites"),
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        height: MediaQuery.of(context).size.height,
-        child: Center(
-          child: Text('Favorite Page'),
-        ),
-      ),
-    );
+      body: ListView.builder(
+          itemCount: favoriteList.length,
+          itemBuilder: (context, index) {
+            final Favorite fav = favoriteList[index];
+            // final game = fav.game;
+            return ListTile(
+              onTap: () async {
+                launch(fav.game!.linkStore);
+              },
+              leading: Image.network(
+                fav.game!.imageUrls[0],
+                fit: BoxFit.cover,
+              ),
+              title: Text(fav.game!.name),
+              subtitle: Text(fav.game!.price),
+            );
+          }),
+    ));
   }
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4tpm/pages/logout.dart';
 import 'package:tugas4tpm/pages/menu_page.dart';
-import 'package:task4/pages/tutorial.dart';
+import 'package:tugas4tpm/pages/tutorial.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super (key:key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
