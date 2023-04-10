@@ -15,6 +15,12 @@ class _StopwatchPageState extends State<StopwatchPage> {
 
   bool isCountdown = false; // state pas stopwatch masih berhenti
 
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
+
   void initState() {
     super.initState();
     reset();
@@ -33,22 +39,25 @@ class _StopwatchPageState extends State<StopwatchPage> {
   void addTime() {
     final addSeconds = isCountdown ? -1 : 1;
 
-    setState(() {
-      final seconds = duration.inSeconds + addSeconds;
-      if (seconds < 0) {
-        timer?.cancel();
-      } else {
-        duration = Duration(seconds: seconds);
-      }
-    });
+    if (this.mounted) {
+      setState(() {
+        final seconds = duration.inSeconds + addSeconds;
+        if (seconds < 0) {
+          timer?.cancel();
+        } else {
+          duration = Duration(seconds: seconds);
+        }
+      });
+    }
   }
 
   void startTimer({bool resets = true}) {
     if (resets) {
       reset();
     }
-
-    timer = Timer.periodic(Duration(seconds: 1), (_) => addTime());
+    if (this.mounted) {
+      timer = Timer.periodic(Duration(seconds: 1), (_) => addTime());
+    }
   }
 
   void stopTimer({bool resets = true}) {

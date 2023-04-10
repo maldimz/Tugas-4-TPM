@@ -38,5 +38,14 @@ var usersList = [
       born: 'Yogyakarta, 25 January 2003',
       classes: 'TPM IF-H',
       hope: 'Menjadi Dosen',
-      image: 'assets/images/juan.jpg')
+      image: 'assets/images/juan.jpg'),
+  Users(
+      username: "maulana",
+      password: "daffa",
+      nim: "123200130",
+      name: "Maulana Daffa Ardiansyah",
+      born: "Sleman, 25 Mei 2002",
+      classes: "TPM-IF-H",
+      hope: "Menjadi orang kaya",
+      image: "assets/images/daffa.jpeg")
 ];
